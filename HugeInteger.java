@@ -2,6 +2,7 @@ package HugeInteger;
 
 import static java.lang.Character.getNumericValue;
 import static java.lang.Character.isDigit;
+import java.util.Arrays;
 import java.util.Random;
 
 public class HugeInteger {
@@ -345,12 +346,15 @@ public class HugeInteger {
                 //initialize add
                 int add = big[j] * small[i];
 
-                if ((j + 1 == product.length || j + i == product.length - 1)) {//resizes array if last element
+                if ((j + 1 == product.length || j + i == product.length - 1)){//product[j]+add>=10)) {//resizes array if last element
+                    System.out.println("resize");
+                    System.out.println(Arrays.toString(product));
                     int product2[] = new int[product.length + 1];
                     for (int n = 0; n < product.length; n++) {
                         product2[n] = product[n];
                     }
                     product = product2;
+                    System.out.println(Arrays.toString(product));
                 }
 
                 int counter1 = 0;
